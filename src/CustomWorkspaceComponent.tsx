@@ -1,0 +1,18 @@
+import { WorkspaceWindowChannelsLink } from "@interopio/workspaces-ui-react";
+import CustomCloseButton from "./CustomCloseButton";
+import { WorkspaceWindowTabComponentProps } from "@interopio/workspaces-ui-react/dist/cjs/types/api";
+
+
+const CustomWorkspaceComponent: React.FC<WorkspaceWindowTabComponentProps> = ({ close }) => {
+    return (
+        <>
+            <h6 style={{ color: "red", fontSize: "16px", margin: "0" }}>
+                Custom Workspace
+            </h6>
+            {<CustomCloseButton {...close} />}
+        </>
+    );
+}
+
+
+export default CustomWorkspaceComponent;

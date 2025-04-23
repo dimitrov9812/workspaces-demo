@@ -6,6 +6,10 @@ import { IOConnectDesktop } from '@interopio/desktop';
 import { IOConnectWorkspaces } from '@interopio/workspaces-api';
 import AfterTabs from './AfterTabs';
 import GroupHeaderButtons from './GroupHeaderButtons';
+import Logo from './Logo';
+import CustomButton from './CustomButon';
+import CustomAddWorkspaceButton from './CustomAddWorkspaceButton';
+import CustomWorkspaceComponent from './CustomWorkspaceComponent';
 
 const App = () => {
     (window as any).io = useContext(IOConnectContext);
@@ -92,9 +96,20 @@ const App = () => {
 
     return (
         <Workspaces components={{
+            header: {
+                LogoComponent: () => <>
+                    <div style={{ display: "flex", alignItems: "center", height: "100%", backgroundColor: "red", padding: "0 10px" }}>
+                        <Logo />
+                        <CustomButton />
+                    </div>
+                </>,
+                AddWorkspaceComponent: () => <CustomAddWorkspaceButton />,
+                // WorkspaceTabComponent: () => <CustomWorkspaceComponent title={'testTitle'} close={undefined} />,
+            },
             groupHeader: {
                 AfterTabsComponent: AfterTabs,
-                ButtonsComponent: GroupHeaderButtons
+                ButtonsComponent: GroupHeaderButtons,
+                // WorkspaceWindowTabComponent: CustomWorkspaceComponent
             }
         }} />
     );
