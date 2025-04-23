@@ -1,0 +1,23 @@
+{
+    "title": "Workspaces Interop Template",
+    "type": "window",
+    "name": "workspaces-interop-template",
+    "autoStart": false,
+    "allowMultiple": false,
+    "hidden": false,
+    "service": false,
+    "details": {
+        "url": "http://localhost:5173",
+        "mode": "tab",
+        "left": 300,
+        "top": 100,
+        "width": 700,
+        "height": 500,
+        "security": {
+            "sandbox": false
+        }
+    },
+    "customProperties": {
+        "includeInWorkspaces": true
+    }
+}
