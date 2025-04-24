@@ -10,6 +10,7 @@ import Logo from './Logo';
 import CustomButton from './CustomButon';
 import CustomAddWorkspaceButton from './CustomAddWorkspaceButton';
 import CustomWorkspaceComponent from './CustomWorkspaceComponent';
+import CustomWpTabComp from './CustomWpTabComp';
 
 const App = () => {
     (window as any).io = useContext(IOConnectContext);
@@ -103,13 +104,14 @@ const App = () => {
                         <CustomButton />
                     </div>
                 </>,
-                AddWorkspaceComponent: () => <CustomAddWorkspaceButton />,
-                // WorkspaceTabComponent: () => <CustomWorkspaceComponent title={'testTitle'} close={undefined} />,
+                AddWorkspaceComponent: CustomAddWorkspaceButton,
+                // WorkspaceTabComponent: (x) => <CustomWorkspaceComponent title={'testTitle'} {...x} />,
+                WorkspaceTabComponent: CustomWpTabComp
             },
             groupHeader: {
                 AfterTabsComponent: AfterTabs,
                 ButtonsComponent: GroupHeaderButtons,
-                // WorkspaceWindowTabComponent: CustomWorkspaceComponent
+                WorkspaceWindowTabComponent: CustomWorkspaceComponent
             }
         }} />
     );

@@ -4,7 +4,7 @@ interface CustomCloseButtonProps {
     close: () => void;
 }
 
-const CustomCloseButton = ({ close }: CustomCloseButtonProps) => {
+const CustomCloseButton: React.FC<CustomCloseButtonProps> = ({ close }) => {
     const ref = useRef(null);
 
     useEffect(() => {
@@ -12,10 +12,10 @@ const CustomCloseButton = ({ close }: CustomCloseButtonProps) => {
 
         // Stop the propagation of the `"mousedown"` event,
         // in order to prevent the Workspaces framework from processing it.
-        (ref.current as any).onmousedown = (e: any) => e.stopPropagation();
+        ref.current.onmousedown = e => e.stopPropagation();
     }, [ref]);
 
-    return <button ref={ref} onClick={() => close()}>x</button>
+    return <button ref={ref} onClick={() => close()}>xxxx</button>
 };
 
 export default CustomCloseButton;
