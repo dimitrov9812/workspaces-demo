@@ -14,6 +14,7 @@ import CustomWpTabComp from './CustomWpTabComp';
 
 const App = () => {
     (window as any).io = useContext(IOConnectContext);
+    const io = useContext(IOConnectContext);
 
     useEffect(() => {
         const shortcuts: { [id: string]: () => void } = {};
